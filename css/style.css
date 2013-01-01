@@ -10,7 +10,7 @@ body {
 	padding: 3px;
 	border: 0px solid #c0c0c0;
 	margin-bottom: 5px;
-	max-width: 1024px;
+	max-width: 100%;
 }
 #scene {
 	position:absolute;
@@ -26,6 +26,7 @@ body {
 #footer {
 	position:fixed;
 	bottom:0;
+	max-width:100%;
 }
 #inventory {
 	clear:both;
@@ -38,7 +39,7 @@ body {
 	font-size: 26px;
 }
 input {
-	width: 80%;
+	width: 50%;
 }
 #help, #debug {
 	color: #c0c0c0;

@@ -14,10 +14,10 @@
 		<div id="canvas"> 																					<!-- a wrapper for everything.  probably optional -->
 			<!-- <div id="onepixel" class="left"><img src="rooms/onepixel.png"/></div> -->
 			<div id="scene" class="panel noborder"></div> 													<!-- where the scene is loaded - the scene is a separate HTML file with images and imagemaps, but no game logic or javascript code -->
-			<div id="inventory" class="panel" > 																<!-- a wrapper for inventory items -->
-				You are carrying: <div id="carrying" class="inline">Nothing.</div> 							<!-- this span is changed when inventory changes obviously -->
-			</div>
 			<div id="footer">
+				<div id="inventory" class="panel" > 																<!-- a wrapper for inventory items -->
+					You are carrying: <div id="carrying" class="inline">Nothing.</div> 							<!-- this span is changed when inventory changes obviously -->
+				</div>
 				<div id="controls" class="panel"> 																<!-- a wrapper for common controls, mainly navigation -->
 					<div class="inline"><a onclick="parse('n')">N</a></div> 									<!-- this is exactly the same as typing "n" into the input box and pressing enter.  see parse() in engine.js to understand why -->
 					<div class="inline"><a onclick="parse('s')">S</a></div>
