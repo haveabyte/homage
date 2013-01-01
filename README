@@ -1,0 +1,98 @@
+HOMAGE
+------
+
+	Description: Html Object-oriented Multi-purpose Adequate Game Engine
+	Author:  Erik Knepfler, HaveAByte.com
+	License:  http://creativecommons.org/licenses/by-nc/3.0/
+	Commercial use:  See license, contact me via Github
+
+
+Introduction
+------------
+
+	HOMAGE is a game engine based on HTML, Javascript, JQuery, and CSS, and nothing else.
+	It is intended for text+graphic style adventure games, but depending on your ability could be used for more than this.
+
+	It grew out of a few things:
+
+	* This article:  http://williamedwardscoder.tumblr.com/post/21865366869/how-to-make-a-text-adventure
+	* I wanted to make a game
+	* I wanted to be able to make more than one game
+	* I wanted other people to be able to make games with my creation
+	* I wanted to leverage, and allow others to leverage, existing basic HTML, CSS, JavaScript and JQuery skill
+	* I didn't want to use <canvas>
+	* I wanted to write it from scratch to build my development skills
+	* I want to publish the games to mobile
+	* I wanted to experiment with Adobe PhoneGap, and experiment with Github
+	* I want to learn about the state of HTML5 mobile app development
+
+	The best way to understand HOMAGE is to read this article:
+		http://williamedwardscoder.tumblr.com/post/21865366869/how-to-make-a-text-adventure
+	And then ask yourself, "what would a fully functional game engine based on that look like, if it were as simple as possible, using just HTML, CSS, JavaScript and JQuery?"
+	
+	HOMAGE is a demo game and SDK all rolled up into one.  The best way to learn is by reading the code.  When you see how small most of the files are, this won't seem very daunting.
+
+Features
+--------
+
+	* Easy to learn, easy to modify
+	* Minimal scaffolding, minimum to no abstraction 
+	* JSON object oriented location (aka room) definitions
+	* Clickable objects tied to room-specific actions
+	* Configurable functions for actions defined within the main JSON object
+	* Every engine function fits within a screen of code
+	* Inventory, state management
+
+Logic Flow
+----------
+	index.html loads
+	$(document).ready goes to the first location using go()
+	at this point the game is "started" and the following is a repeating loop:
+		location first_visit() function fires, which usually loads a scene and checks other state info
+		it awaits user input (meaning it does nothing and parse() is usually the next thing to happen)
+		parse() checks command against known commands for the location and executes that function
+		one of those functions eventually will go() to another location
+		the process repeats.
+	
+	That's a bit simplified, but not by very much.
+
+Files
+-----
+	Current number of files and lines of code:
+
+	index.html - 43 lines
+		This is the main canvas for the game.  It contains fairly basic DIVs with minmal styling.
+
+	css/style.css - 51 lines
+		A very basic stylesheet.
+
+	js/engine.js - 169 lines
+		The main game engine.  Uses $(document).ready(function(){}) which has only two lines calling two functions.  Those functions in total are executing only a few dozen lines of code.
+
+	js/objects.js - 198 lines
+		This contains JSON data for the four locations in the demo game and the inventory.
+		The JSON data not only contains basic info such as location names and descriptions, but also defines what to do on first and returning visits, what to do for every possible command.
+
+	rooms/*.htm - 1 to 4 lines each
+		Room specific scene HTML - just an image or sometimes a few divs with two image or clickable areas mapped to location specific functions.
+		
+	README - 98 lines - for perspective.  :)
+
+
+Issues
+------
+	Currently the game requires a webserver present so that the JQuery AJAX .load() calls will work.  This will be corrected - goal is to be able to execute index.htm from disk and everything works.
+	For now, you'd need to load this into a webserver to make it work.
+	
+	The CSS kind of sucks for now, especially when testing mobile compatibility.
+
+Comments
+--------
+	HOMAGE is nowhere near any level of completion.  This version is so premature that it does not even deserve a version number.
+
+	Next steps are to continue optimizing, and adding various common game mechanics beyond the "click the screen in a certain place to make it do something" methods.
+
+
+Credits
+-------
+	Coming soon - some of the demo images are under license and require attribution.

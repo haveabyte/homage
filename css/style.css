@@ -1,0 +1,51 @@
+html{
+	height:100%;
+}
+body {
+	height:100%;
+	margin:0;
+	padding:0;
+}
+.panel {
+	padding: 3px;
+	border: 0px solid #c0c0c0;
+	margin-bottom: 5px;
+	max-width: 1024px;
+}
+#scene {
+	position:absolute;
+	width:1024px;
+	height:768px;
+	max-width:100%;
+	padding:0;
+}
+#scene img {
+	max-width: 100%;
+	height:auto;
+}
+#footer {
+	position:fixed;
+	bottom:0;
+}
+#inventory {
+	clear:both;
+}
+#carrying a {
+	text-decoration: underline;
+	color: blue;
+}
+#controls a { 
+	font-size: 26px;
+}
+input {
+	width: 80%;
+}
+#help, #debug {
+	color: #c0c0c0;
+}
+
+a { cursor: pointer; }
+.noborder { border:none; }
+.inline { display:inline; }
+.left { float: left; }
+.right { float: right; }

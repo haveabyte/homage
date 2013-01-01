@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+			<meta charset="utf-8">
+			<title>JGE</title> 																				<!-- this will never change, so make it good -->
+			<link rel="stylesheet" type="text/css" href="css/style.css"/> 									<!-- VERY minimal styling -->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+			<script type="text/javascript" src="js/jquery-1.8.3.js"></script> 								<!-- JQuery is required -->
+			<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 	<!-- JQueryUI used for .draggable() function -->
+			<script type="text/javascript" src="js/objects.js"></script> 									<!-- the locations, inventory and other objects -->
+			<script type="text/javascript" src="js/engine.js"></script> 									<!-- the main game engine and logic, you'll find $(document).ready() here -->
+	</head>
+	<body> 																				
+		<div id="canvas"> 																					<!-- a wrapper for everything.  probably optional -->
+			<!-- <div id="onepixel" class="left"><img src="rooms/onepixel.png"/></div> -->
+			<div id="scene" class="panel noborder"></div> 													<!-- where the scene is loaded - the scene is a separate HTML file with images and imagemaps, but no game logic or javascript code -->
+			<div id="inventory" class="panel" > 																<!-- a wrapper for inventory items -->
+				You are carrying: <div id="carrying" class="inline">Nothing.</div> 							<!-- this span is changed when inventory changes obviously -->
+			</div>
+			<div id="footer">
+				<div id="controls" class="panel"> 																<!-- a wrapper for common controls, mainly navigation -->
+					<div class="inline"><a onclick="parse('n')">N</a></div> 									<!-- this is exactly the same as typing "n" into the input box and pressing enter.  see parse() in engine.js to understand why -->
+					<div class="inline"><a onclick="parse('s')">S</a></div>
+					<div class="inline"><a onclick="parse('w')">W</a></div>
+					<div class="inline"><a onclick="parse('e')">E</a></div>
+					<div class="inline"><a onclick="parse('u')">Up</a></div>
+					<div class="inline"><a onclick="parse('d')">Down</a></div>
+					<div class="inline"><a onclick="parse('look')">Look</a></div>  								<!-- this is exactly the same as typing "look" into the input box and pressing enter.  see parse() in engine.js to understand why -->
+				</div>
+				<div id="name" class="panel">name</div> 														<!-- just a div we put the location.name into -->
+				<div id="output" class="panel">output</div> 													<!-- where we output various lines of dialog, descriptions, and similar -->
+				<div id="userinput" class="panel">
+					<input type="text" id="input" onkeyup="if (event.keyCode == key_codes_by_name['enter']) { parse(); }"/>								
+					<button onclick="parse()">Execute</button>
+				</div> 						
+				<div id="help" class="panel"></div> 															<!-- an extra panel for outputting help text -->
+				<div id="debug_container" class="panel noborder"> 												<!-- just debug output, should be disabled/hidden  from final product -->
+					<textarea id="debug" rows="3" cols="80"></textarea>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
