@@ -166,6 +166,7 @@ var locations = {
         			output("You already torched the place... you can't really do any more here with your lighter.");
         		} else { 
             		output('You light the hedges ablaze and sit back to admire your handiwork.  After a while, nothing remains but the ashes of a once great hedge maze.  You are free to continue north.  To the south is the jail you came from, and on the east and west are, let\s say, deadly ravines.');
+            		l.description = 'You are standing in front of a burned down hedge maze.  You can travel north.  To the south is the jail you came from, and on the east and west are, let\s say, deadly ravines.';
             		l.state.hedges = 'burned';
             		l.name = 'a burned down hedge maze';
             		name(l.name);

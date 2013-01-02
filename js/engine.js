@@ -163,7 +163,7 @@ function d(msg) { // a debugger
 	var d = new Date();
 	var out = d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds() + " " + " Message: " + msg;
     delete d;
-	$('#debug').val(out + '\n' + $('#debug').val()); // comment out this line to stop printing debug output to the page
+	$('#debug').html(out + '\n' + $('#debug').val()); // comment out this line to stop printing debug output to the page
 	console.log(out);
 	return;
 }

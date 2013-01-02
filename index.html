@@ -12,31 +12,46 @@
 	</head>
 	<body> 																				
 		<div id="canvas"> 																					<!-- a wrapper for everything.  probably optional -->
-			<!-- <div id="onepixel" class="left"><img src="rooms/onepixel.png"/></div> -->
 			<div id="scene" class="panel noborder"></div> 													<!-- where the scene is loaded - the scene is a separate HTML file with images and imagemaps, but no game logic or javascript code -->
 			<div id="footer">
-				<div id="inventory" class="panel" > 																<!-- a wrapper for inventory items -->
-					You are carrying: <div id="carrying" class="inline">Nothing.</div> 							<!-- this span is changed when inventory changes obviously -->
-				</div>
-				<div id="controls" class="panel"> 																<!-- a wrapper for common controls, mainly navigation -->
-					<div class="inline"><a onclick="parse('n')">N</a></div> 									<!-- this is exactly the same as typing "n" into the input box and pressing enter.  see parse() in engine.js to understand why -->
-					<div class="inline"><a onclick="parse('s')">S</a></div>
-					<div class="inline"><a onclick="parse('w')">W</a></div>
-					<div class="inline"><a onclick="parse('e')">E</a></div>
-					<div class="inline"><a onclick="parse('u')">Up</a></div>
-					<div class="inline"><a onclick="parse('d')">Down</a></div>
-					<div class="inline"><a onclick="parse('look')">Look</a></div>  								<!-- this is exactly the same as typing "look" into the input box and pressing enter.  see parse() in engine.js to understand why -->
-				</div>
-				<div id="name" class="panel">name</div> 														<!-- just a div we put the location.name into -->
-				<div id="output" class="panel">output</div> 													<!-- where we output various lines of dialog, descriptions, and similar -->
-				<div id="userinput" class="panel">
-					<input type="text" id="input" onkeyup="if (event.keyCode == key_codes_by_name['enter']) { parse(); }"/>								
-					<button onclick="parse()">Execute</button>
-				</div> 						
-				<div id="help" class="panel"></div> 															<!-- an extra panel for outputting help text -->
-				<div id="debug_container" class="panel noborder"> 												<!-- just debug output, should be disabled/hidden  from final product -->
-					<textarea id="debug" rows="3" cols="80"></textarea>
-				</div>
+				<table>
+					<tr>
+						<td>
+								<div id="compass">
+									<img src="res/compass.png"/>
+									<div id="down"	  onclick="parse('d')">&nbsp;</div>
+									<div id="north"	  onclick="parse('n')">&nbsp;</div>											<!-- this is exactly the same as typing "n" into the input box and pressing enter.  see parse() in engine.js to understand why -->
+									<div id="up"	  onclick="parse('u')">&nbsp;</div><br/>
+									<div id="west"	  onclick="parse('w')">&nbsp;</div>
+									<div id="blank">&nbsp;</div>
+									<div id="east"	  onclick="parse('e')">&nbsp;</div><br/>
+									<div id="blank2">&nbsp;</div>
+									<div id="south"	  onclick="parse('s')">&nbsp;</div>
+									<div id="look"    onclick="parse('look')">&nbsp;</div> 										<!-- this is exactly the same as typing "look" into the input box and pressing enter.  see parse() in engine.js to understand why -->
+								</div>
+						</td>
+						<td>
+								<div id="text">
+									<div id="inventory" class="panel" > 														<!-- a wrapper for inventory items -->
+										You are carrying: <div id="carrying" class="inline">Nothing.</div> 						<!-- this span is changed when inventory changes obviously -->
+									</div>
+									<div id="controls" class="panel"> 															<!-- a wrapper for common controls, mainly navigation -->
+										
+									</div>
+									<div id="name" class="panel">name</div> 													<!-- just a div we put the location.name into -->
+									<div id="output" class="panel">output</div> 												<!-- where we output various lines of dialog, descriptions, and similar -->
+									<div id="userinput" class="panel">
+										<input type="text" id="input" onkeyup="if (event.keyCode == key_codes_by_name['enter']) { parse(); }"/>								
+										<button onclick="parse()">Execute</button>
+									</div> 						
+									<div id="help" class="panel"></div> 														<!-- an extra panel for outputting help text -->
+									<div id="debug_container" class="panel noborder"> 											<!-- just debug output, should be disabled/hidden  from final product -->
+										<div id="debug"></div>
+									</div>
+								</div>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</body>

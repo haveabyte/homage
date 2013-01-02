@@ -1,52 +1,154 @@
+* {
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); /* disables the slow and weird highlight that appears when clicking A HREF or DIV ONCLICK items */
+}
 html{
-	height:100%;
+	height:100%; /* something told me to do this in order to fix heights but i don't think it's necessary at the moment */
 }
 body {
-	height:100%;
-	margin:0;
-	padding:0;
+	height:100%; /* something told me to do this in order to fix heights but i don't think it's necessary at the moment */
+	margin:0; 	 /* entire page usually has a margin of a few pixels, this does full bleed */
+	padding:0;   /* entire page usually has a padding of a few pixels, this does full bleed */
 }
 .panel {
-	padding: 3px;
-	border: 0px solid #c0c0c0;
-	margin-bottom: 5px;
-	max-width: 100%;
+	padding: 0px; /* most panels we want a little bit of padding especially if they will have a border */
+	border: 0px solid #c0c0c0; /* just draws a border around each panel */
+	margin-bottom: 5px; /* to space them out */
+	max-width: 100%; /* prevents elements which happen to be bigger than the page from going off the edge */
 }
-#scene {
-	position:absolute;
-	width:1024px;
-	height:768px;
-	max-width:100%;
-	padding:0;
+#compass {
+	padding: 0;
+	width: 100px;
+	height: 102px;
+	float:left;
+	white-space: nowrap;
+	min-width: 100px;
+	position: fixed;
+	bottom: 9px;
 }
-#scene img {
-	max-width: 100%;
-	height:auto;
-}
-#footer {
-	position:fixed;
-	bottom:0;
-	max-width:100%;
-}
-#inventory {
-	clear:both;
-}
-#carrying a {
-	text-decoration: underline;
-	color: blue;
-}
-#controls a { 
-	font-size: 26px;
-}
-input {
-	width: 50%;
-}
-#help, #debug {
-	color: #c0c0c0;
+#compass div {
+	height: 32%;
+	width: 30%;
+	/*background-color:green;filter:alpha(opacity=5);opacity:.05;*/
 }
 
-a { cursor: pointer; }
+#compass img {
+	position: absolute;
+	width: 100px;
+	height: 102px;
+	top: 0;
+	z-index: -1;
+	height: auto;
+	display: inline-block;
+}
+
+#compass div#up {
+	cursor: pointer;
+	display: inline-block;
+	border: 0px solid red;
+}
+#compass div#north {
+	cursor: pointer;
+	display: inline-block;
+	border: 0px solid yellow;
+}
+#compass div#down {
+	cursor: pointer;
+	display: inline-block;
+	border: 0px solid green;
+}
+
+
+#compass div#west {
+	cursor: pointer;
+	clear: both;
+	display: inline-block;
+	border: 0px solid red;
+}
+#compass div#blank {
+	display: inline-block;
+	border: 0px solid yellow;
+}
+#compass div#east {
+	cursor: pointer;
+	display: inline-block;
+	border: 0px solid green;
+}
+
+
+#compass div#blank2 {
+	clear: both;
+	display: inline-block;
+	border: 0px solid red;
+}
+#compass div#south {
+	cursor: pointer;
+	display: inline-block;
+	border: 0px solid yellow;
+}
+#compass div#look {
+	cursor: pointer;
+	display: inline-block;
+	border: 0px solid green;
+}
+
+
+
+#scene {
+	position:fixed; /* temporary */
+	top:0;
+	width:1024px;
+	height:768px;
+	max-width:100%; /* prevents elements which happen to be bigger than the page from going off the edge */
+	padding:0; /* full bleed, since we set it to 3px above for most panels */
+}
+#scene img { /* images inside the #scene div - this usually applies to images loaded via html pages using .load() */
+	max-width: 100%; /* prevents elements which happen to be bigger than the page from going off the edge */
+	height:auto; /* maintains the aspect ratio */
+	z-index:0;
+}
+#footer {
+	position:fixed; /* lock footer to bottom of screen, wherever that is.  this div contains all non-scene items */
+	bottom:0; /* lock footer to bottom of screen, wherever that is.  this div contains all non-scene items */ 
+	clear: both; /* currently doesn't do anything since positions are fixed, but may be needed later depending on how we ultimately flow the scene */
+	background-color: #fff;
+	display: inline-block;
+	max-width:100%;
+}
+#text {
+	padding-left: 101px;
+	float:right;
+	white-space: nowrap;
+}
+#inventory {
+	white-space: normal;
+	padding-top: 3px;
+}
+#carrying a {
+	text-decoration: underline; /* just underlines links of things we're carrying */
+	color: blue; /* so that they're obviously clickable */
+}
+#output {
+	white-space: normal !important;
+	overflow:hidden;
+    text-overflow:auto;
+}
+input {
+	width: 60%; /* lock to half screen to keep room for the execute button */
+}
+#help {
+	color: #c0c0c0; /* light gray */
+	display: none; /* to disable these optional panels */
+	float: none;
+}
+#debug {
+	color: #c0c0c0; /* light gray */
+	float: none !important;
+	display: none;
+}
+a { cursor: pointer; } /* always want cursor pointer, may want to disable for hard mode */
+
+/* just some classes we can use when desired */
 .noborder { border:none; }
-.inline { display:inline; }
+.inline { display:inline; } /* side by side stuff */
 .left { float: left; }
 .right { float: right; }
