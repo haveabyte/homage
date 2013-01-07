@@ -5,7 +5,7 @@ var locations = {
 	title : {
         name:'Jailbreak',
         urlslug:'title',
-        description: 'Press enter or click the screen to begin!',
+        description: 'Tap the title screen to begin!',
         help: 'Demonstrated here:  Calling go() via an image click, handling no input ENTER key press.', 
         visits: 0,
         first_visit: function() { $('#scene').load('rooms/' + this.urlslug + ".htm"); }, // load the scene specific html }, // output() something here to override description on first visit

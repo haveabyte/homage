@@ -8,6 +8,7 @@ body {
 	height:100%; /* something told me to do this in order to fix heights but i don't think it's necessary at the moment */
 	margin:0; 	 /* entire page usually has a margin of a few pixels, this does full bleed */
 	padding:0;   /* entire page usually has a padding of a few pixels, this does full bleed */
+	background-color: #000;
 }
 .panel {
 	padding: 0px; /* most panels we want a little bit of padding especially if they will have a border */
@@ -91,8 +92,6 @@ body {
 	border: 0px solid green;
 }
 
-
-
 #scene {
 	position:fixed; /* temporary */
 	top:0;
@@ -107,12 +106,18 @@ body {
 	z-index:0;
 }
 #footer {
+	z-index:0;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
 	position:fixed; /* lock footer to bottom of screen, wherever that is.  this div contains all non-scene items */
 	bottom:0; /* lock footer to bottom of screen, wherever that is.  this div contains all non-scene items */ 
 	clear: both; /* currently doesn't do anything since positions are fixed, but may be needed later depending on how we ultimately flow the scene */
-	background-color: #fff;
 	display: inline-block;
+	width:100%;
 	max-width:100%;
+	height: auto;
+	min-height: 122px;
 }
 #text {
 	padding-left: 101px;
@@ -125,15 +130,22 @@ body {
 }
 #carrying a {
 	text-decoration: underline; /* just underlines links of things we're carrying */
-	color: blue; /* so that they're obviously clickable */
+	color: #fff; /* so that they're obviously clickable */
 }
 #output {
+	z-index: 5;
 	white-space: normal !important;
 	overflow:hidden;
     text-overflow:auto;
 }
+#userinput {
+	display: none;
+}
 input {
 	width: 60%; /* lock to half screen to keep room for the execute button */
+}
+#button {
+	width:auto;
 }
 #help {
 	color: #c0c0c0; /* light gray */

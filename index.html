@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
-			<meta charset="utf-8">
 			<title>JGE</title> 																				<!-- this will never change, so make it good -->
-			<link rel="stylesheet" type="text/css" href="css/style.css"/> 									<!-- VERY minimal styling -->
+			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-			<script type="text/javascript" src="js/jquery-1.8.3.js"></script> 								<!-- JQuery is required -->
-			<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 	<!-- JQueryUI used for .draggable() function -->
+			<link rel="stylesheet" type="text/css" href="css/style.css"/> 									<!-- VERY minimal styling -->
+			<!-- <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />-->
+			<script src="js/jquery-1.8.2.min.js"></script>
+			<!-- <script src="js/jquery.mobile-1.2.0.min.js"></script> -->
+
+			<script type="text/javascript" src="js/jquery-1.8.2.js"></script> 								<!-- JQuery is required -->
+			
 			<script type="text/javascript" src="js/objects.js"></script> 									<!-- the locations, inventory and other objects -->
 			<script type="text/javascript" src="js/engine.js"></script> 									<!-- the main game engine and logic, you'll find $(document).ready() here -->
 	</head>
@@ -42,8 +46,8 @@
 									<div id="output" class="panel">output</div> 												<!-- where we output various lines of dialog, descriptions, and similar -->
 									<div id="userinput" class="panel">
 										<input type="text" id="input" onkeyup="if (event.keyCode == key_codes_by_name['enter']) { parse(); }"/>								
-										<button onclick="parse()">Execute</button>
-									</div> 						
+										<input id="button" type="button" onclick="parse()" value="Execute"/>
+									</div>
 									<div id="help" class="panel"></div> 														<!-- an extra panel for outputting help text -->
 									<div id="debug_container" class="panel noborder"> 											<!-- just debug output, should be disabled/hidden  from final product -->
 										<div id="debug"></div>
