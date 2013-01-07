@@ -31,7 +31,7 @@ function go(loc) {
 	help(l.help); 				// writes the help text, see function help()
 	visit(l); 					// we call this function anytime a location is visited so that certain first/repeat visit things can happen
 																																									d('go() finished'); 		// d(msg) is our universal debug function
-	update_url('#'+l.urlslug); 	// prototype back button handling
+	//update_url('#'+l.urlslug); 	// prototype back button handling
 }
 
 function visit(loc) { 		// we call this function anytime a location is visited so that certain first/repeat visit things can happen
