@@ -152,3 +152,27 @@ a { cursor: pointer; } /* always want cursor pointer, may want to disable for ha
 .inline { display:inline; } /* side by side stuff */
 .left { float: left; }
 .right { float: right; }
+
+/*____ PRELOAD IMAGES ____*/
+body:after {
+	content:
+	        url(../rooms/title.jpg)
+	
+			url(../rooms/1024x768.jpg) 
+	        url(../rooms/onepixel.jpg)
+
+
+	        url(../rooms/the-cage.jpg)
+	        url(../rooms/the-cage-no-paperclip.jpg)
+
+	        url(../rooms/hallway.jpg) 
+
+	        url(../rooms/hedge-entrance.jpg)
+	        url(../rooms/hedge-entrance-gasoline-can.jpg)
+	        url(../rooms/hedge-entrance-gas-poured.jpg)
+	        url(../rooms/hedge-entrance-fire.jpg) 
+	        url(../rooms/hedge-entrance-burned.jpg) 
+
+	        ;
+	display:none;
+}
