@@ -1,5 +1,5 @@
 * {
-	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); /* disables the slow and weird highlight that appears when clicking A HREF or DIV ONCLICK items */
+	-webkit-tap-highlight-color:  rgba(0, 0, 0, 0); /* disables the slow and weird highlight that appears when clicking A HREF or DIV ONCLICK items */
 }
 html{
 	height:100%; /* something told me to do this in order to fix heights but i don't think it's necessary at the moment */
