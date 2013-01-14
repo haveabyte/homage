@@ -32,6 +32,17 @@ Introduction
 	
 	HOMAGE is a demo game and SDK all rolled up into one.  The best way to learn is by reading the code.  When you see how small most of the files are, this won't seem very daunting.
 
+Mobile Builds
+-------------
+
+Available here:
+https://build.phonegap.com/apps/271384/builds
+
+Don't have a key for the iOS app so it's only Android, Blackberry, Windows phone, WebOS, and Symbian.
+Android build tested on a Samsung Galaxy S3, works great in Portrait mode, CSS not yet set for Landscape.
+Blackberry build tested on a Blackberry Bold 9700 (I think) and it doesn't work, a blank screen appears.
+No other builds have been tested.  Would love to get screenshots from you.  
+
 Features
 --------
 
